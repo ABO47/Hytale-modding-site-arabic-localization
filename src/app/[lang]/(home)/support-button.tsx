@@ -36,9 +36,9 @@ export function SponsorButton() {
         startTransition(() => setState("error"));
       });
   }, []);
-    
+
   return (
-    <Button className="relative" asChild>
+    <Button className="relative mb-4" asChild>
       <Link href={`/${locale}/sponsors`}>
         <HeartHandshakeIcon />
         {messages.misc.supportUs}
@@ -53,16 +53,20 @@ export function SponsorButton() {
                 {randomSponsors.map((sponsor, index) => (
                   <Avatar
                     key={index}
-                    className="h-8 w-8 border-2 border-background"
+                    className="border-background h-8 w-8 border-2"
                     title={sponsor.name}
                   >
                     <AvatarImage src={sponsor.image} alt={sponsor.name} />
-                    <AvatarFallback>{sponsor.name.slice(0, 2).toUpperCase()}</AvatarFallback>
+                    <AvatarFallback>
+                      {sponsor.name.slice(0, 2).toUpperCase()}
+                    </AvatarFallback>
                   </Avatar>
                 ))}
               </div>
             ) : (
-              <p className="text-destructive text-sm">Failed to load sponsors</p>
+              <p className="text-destructive text-sm">
+                Failed to load sponsors
+              </p>
             )}
           </ViewTransition>
         </div>

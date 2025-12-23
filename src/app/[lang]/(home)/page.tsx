@@ -264,23 +264,27 @@ export default function HomePage() {
             </h2>
             </div>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button asChild>
-              <Link href={localizeHref("/docs", params.lang?.toString())}>
-                <BookIcon /> {messages.home.documentation}
-              </Link>
-            </Button>
-            <Button asChild>
-              <Link
-                href="https://forum.hytalemodding.guide"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageSquare /> {messages.home.forum}
-              </Link>
-            </Button>
-            <DiscordButton />
-            <SponsorButton />
+          <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild>
+                <Link href={localizeHref("/docs", params.lang?.toString())}>
+                  <BookIcon /> {messages.home.documentation}
+                </Link>
+              </Button>
+              <Button asChild>
+                <Link
+                  href="https://forum.hytalemodding.guide"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageSquare /> {messages.home.forum}
+                </Link>
+              </Button>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <DiscordButton />
+              <SponsorButton />
+            </div>
           </div>
         </div>
       </div>
