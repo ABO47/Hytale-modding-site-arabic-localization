@@ -45,8 +45,6 @@ export function SponsorButton() {
                     displayedSponsors[displayedSponsors.length - 1].name,
                 )
               : -1;
-          console.log(displayedSponsors.length);
-          console.log(lastIndex);
 
           const nextIndex = (lastIndex + 1) % sponsorsList.length;
           const selected = [];
